@@ -7,7 +7,11 @@ const uri = 'mongodb+srv://abdulaziz:3536665Aa@cluster0.islze.mongodb.net/mongo?
 
 async function mongo(){
     try {
-        await mongoose.connect(uri)
+        await mongoose.connect(uri, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            useCreateIndex: true
+        })
 
     } catch (error) {
         console.error("MONGO_ERROR", error = '')
