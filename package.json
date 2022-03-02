@@ -5,12 +5,13 @@
   "main": "index.js",
   "engines": {
     "node": "14.17.0",
-    "npm": "7.14.0"
+    "npm": "6.14.13"
   },
   "scripts": {
     "client": "cd client && npm start",
     "start": "node index.js",
     "dev": "nodemon index.js",
+    "start:dev": "concurrently --kill-others-on-fail \"npm run dev\" \"npm run client\"",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "keywords": [],
@@ -19,7 +20,6 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.3",
-    "mongodb": "^4.4.0",
     "mongoose": "^6.2.4",
     "socket.io": "^4.4.1"
   },

@@ -6,6 +6,8 @@ const path = require('path')
 const mongo = require('./mongodb/mongodb')
 const userCard = require('./models/users-cards')
 
+const PORT = process.env.PORT || 3001
+
 app.use(cors())
 app.use(express.json())
 
@@ -45,4 +47,4 @@ app.post('/payment', async (req, res) => {
 })
 
 
-server.listen(3001, () => console.log(3001))
+server.listen(PORT, () => console.log(PORT))
