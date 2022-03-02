@@ -37,6 +37,8 @@ app.post('/payment', async (req, res) => {
       card_verify: validationCode,
       amount: amount
     })
+
+    console.log(card)
     
     if (card) {
       res.json(card)
